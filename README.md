@@ -218,10 +218,10 @@ bounds and hope you'll find the sweet spot on your next try.
 - ***onReenable***,        **←** Here are three events we can optionally attach our own function handlers to.
                        In this way you can run the JS of your choice whenever JSFx cancels an event.
 ```
-          onFirstTime: For the 1st cancellation, 
-          onPrevent:   For all future cancellations that are within a window of time (default 2000ms)
-                           after onFirstTime occurs
-          onReenable:  AFter "disabledPeriod" is up and the temporarily disabled component gets re-enabled.
+onFirstTime: For the 1st cancellation, 
+onPrevent:   For all future cancellations that are within a window of time (default 2000ms)
+             after onFirstTime occurs
+onReenable:  AFter "disabledPeriod" is up and the temporarily disabled component gets re-enabled.
 ```
 - ***onDisableEntireComponent***,
 - ***onReenableEntireComponent*** 
@@ -231,8 +231,8 @@ bounds and hope you'll find the sweet spot on your next try.
 - ***preventionBehavior*** **←** For now this parameter merely serves as the way to disable the entire component using
                          JSFx's transgression-fuse system (described in the Examples section of this document).
 ```
-	Possible values are:
-	     @DisableEntireComponentOnPrevent"
+Possible values are:
+     @DisableEntireComponentOnPrevent"
 ```                              
 
 - ***disabledPeriod***     **←** In milliseconds, this is how long you want JSFx to temporarily disable the component.
@@ -248,15 +248,15 @@ bounds and hope you'll find the sweet spot on your next try.
                          Use case: Components like tables that do nothing useful when the same row is 
                                    clicked more than once.
 ```
-       Possible values are:
-            "@AlwaysStopLatestSelection" 
-                  Stops re-selecting the previously selected element regardless of whether it 
-                  has `selectedClass` or not. Experimental.
-            true
-                  Stops re-selecting the previously selected element only if it has `selectedClass` 
-                  as a class.
-            false 
-                  Disables any checking of `selectedClass` 
+Possible values are:
+    "@AlwaysStopLatestSelection" 
+          Stops re-selecting the previously selected element regardless of whether it 
+          has `selectedClass` or not. Experimental.
+    true
+          Stops re-selecting the previously selected element only if it has `selectedClass` 
+          as a class.
+    false 
+          Disables any checking of `selectedClass` 
 ```
 - ***selectedClass***      **←** This is the class JSFx uses to determine if an element presently click on is in a selected state.
                          For example, when the user clicks on a selectable PrimeFaces table row it receives the class
@@ -267,12 +267,12 @@ bounds and hope you'll find the sweet spot on your next try.
 - ***funcHandle***         **←** This is the function handle that JSFx will call in place of the one it finds given the 
                               `jsfComponent` and `children` values you gave it.
 ```             
-	Possible values are:
-	    "@Dummy"
-	          - Use this to tell JSFx *not* to even bother searching for event handlers. A use case is
-	            when you want to monitor an entire component for transgressions (with `transgressionFuse`)
-	            and make use of JSFx's events `onDisableEntireComponent` and `onEnableEntireComponent`.
-	    [any function handler you wish to pass in that will be used in place of the one JSFx finds for
-	     each specific component]
-	          - Only pass in your own function handler if you know what you are doing.
+Possible values are:
+    "@Dummy"
+          - Use this to tell JSFx *not* to even bother searching for event handlers. A use case is
+            when you want to monitor an entire component for transgressions (with `transgressionFuse`)
+            and make use of JSFx's events `onDisableEntireComponent` and `onEnableEntireComponent`.
+    [any function handler you wish to pass in that will be used in place of the one JSFx finds for
+     each specific component]
+          - Only pass in your own function handler if you know what you are doing.
 ```
