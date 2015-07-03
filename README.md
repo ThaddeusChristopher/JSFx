@@ -197,13 +197,13 @@ We ask that you use this attribute rather than simply passing the entire selecto
 alone because internally JSFx needs a *range* to search within to find potential event delegates.
 
 Sometimes you'll find the event in the child element, other times it can be in perhaps a delegated 
-<tbody> element farther up the chain, or it could even have been added inline, or to the document
+\<tbody\> element farther up the chain, or it could even have been added inline, or to the document
 object itself. Often there's no telling what those JSF developers were thinking when they chose to
 bind events for their components. And that can make interacting with them from JavaScript a challenge.
 
 Hence we *require* two points of ingress: an upper-bound ("jsfComponent" -- this could even just be
 the #myForm that houses the component) and a lower-bound ("children" -- this should be the most
-specific you can get, such as the <a> tags that are inside <li> tags which are inside <div> tags).
+specific you can get, such as the \<a\> tags that are inside \<li\> tags which are inside \<div\> tags).
 
 Within these two points JSFx can discover the real event handler by traversing *from* the parent 
 jsfComponent (such as "#fileForm\\:treeTable") *to* the children (".ui-treetable-selectable-node").
