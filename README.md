@@ -89,7 +89,7 @@ You can customize the frequency (in milliseconds) that this poll function operat
 
 The above code simply changes the polling from 333ms (the default) to 1000ms. The would give your web app a slight performance gain.
 
-If you know for sure that your particular JSF setup will not in fact overwrite the data attributes and classes you assign to them, then you may completely disable he poll function like so:
+If you know for sure that your particular JSF setup will not in fact overwrite the data attributes and classes you assign to them, then you may completely disable the poll function like so:
 
       jsfX.disablePollingMonitor();
 
