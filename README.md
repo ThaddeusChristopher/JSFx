@@ -244,10 +244,9 @@ Possible values are:
                    **←** This option looks at `selectedClass` and asks, "is the element the user just clicked on
                          presently selected (such as the presently selected data list element among its peers)?"
                          If so the click event will be a no-op. 
-                         
+```              
                          Use case: Components like tables that do nothing useful when the same row is 
                                    clicked more than once.
-```
 Possible values are:
     "@AlwaysStopLatestSelection" 
           Stops re-selecting the previously selected element regardless of whether it 
