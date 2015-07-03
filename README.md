@@ -52,7 +52,8 @@ Let's take a closer look at those configurations.
                    a 2nd jQuery selector called "children" which points to 
                    this JSF component's interactive sub-elements. 
                    E.g.  -->  jsfComponent: "#fileForm\\:tagCloud1", children: "li a"
-                              ^ These two together say we want to monitor events occurring
+                              ^^^^^^^^^^^^                           ^^^^^^^^
+                              These two together say we want to monitor events occurring
                                 from clicking on a Tag Cloud's "li a" hyperlinks.
                                              
 - ***onFirstTime***,
