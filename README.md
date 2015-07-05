@@ -189,8 +189,9 @@ The following is a complete list of options that are supported in each config ob
                    a 2nd jQuery selector called "children" which points to 
                    this JSF component's interactive sub-elements. 
                    E.g.  -->  jsfComponent: "#fileForm\\:tagCloud1", children: "li a"
-                              ^ These two together say we want to monitor events occurring
-                                from clicking on a Tag Cloud's "li a" hyperlinks.
+	                      ^^^^^^^^^^^^                           ^^^^^^^^
+	                      These two together say we want to monitor events occurring
+	                        from clicking on a Tag Cloud's "li a" hyperlinks.
 ```
 - ***children***           **←** This gets appended to the jsfComponent jQuery selector when working with complicated components.
                        
