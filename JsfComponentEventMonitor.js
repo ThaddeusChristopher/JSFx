@@ -1,10 +1,6 @@
 
 var jsfX = new JSFx();
 
-$(document).ready(function() {
-	jsfX.enablePollingMonitor();
-});
-
 function JSFx() {
 	
 	this.config = [];
@@ -56,6 +52,9 @@ JSFx.prototype.$jsfToCompId = function($jsf) {
 		if($(compId)[0] == $jsf[0]) { // also true when:  jsfX.config[compId].isAlone
 			return compId; // $jsf is the main jsf component itself
 		}
+//		if($(jsfComponent)[0] == $jsf[0]) { // also true when:  jsfX.config[compId].isAlone
+//			return compId; // $jsf is the main jsf component itself
+//		}
 		var children = jsfX.config[compId].children;
 		var parentJsfComp = $jsf.closest(jsfComponent);
 		if(parentJsfComp.length > 0) {
@@ -171,6 +170,9 @@ JSFx.prototype.cancelNonJSFxclickAndApplyAspect = function(allEvents, $jsf, stat
 	 *         any possible event-delegating parents. e.g., in PrimeFaces, "onRowClick" being
 	 *         hidden in TBODY instead of directly on a TR.
 	 */
+//	if(appliedAspectElem) {
+//		$jsf.off("click", jsfX.interceptAspect).bindFirst("click",jsfX.interceptAspect);
+//	}
 	return appliedAspectElem;
 };
 
@@ -679,7 +681,7 @@ JSFx.prototype.staticIdTo$jsf = function(staticId) {
 	}
 	var matches = staticId.match(/__([\d]+)/);
 	if(!matches || matches.length == 0) {
-		return null; // DEBUG:  fail fast 
+		return null; // DEBUG:  fail fast ?? or maybe use:  $(jsfComponent_parent);  
 	}
 	var index = parseInt(matches[1]);
 	var allDescendents = getElementNodesIn($(jsfComponent_parent)[0]);
@@ -813,6 +815,9 @@ JSFx.prototype.registerComponents = function(configs) {
 			
 		}
 	}
+	
+	jsfX.enablePollingMonitor();
+	
 };
 JSFx.prototype.showLogs = function() {
 	jsfX.me.log = true;
@@ -821,7 +826,7 @@ JSFx.prototype.hideLogs = function() {
 	jsfX.me.log = false;
 };
 JSFx.prototype.enablePollingMonitor = function() {
-	jsfX.me.pollFunc();
+	if(!jsfX.pollFuncTimeout) {jsfX.me.pollFunc();}
 };
 JSFx.prototype.disablePollingMonitor = function() {
 	clearTimeout(jsfX.pollFuncTimeout);
