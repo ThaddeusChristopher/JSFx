@@ -259,7 +259,7 @@ Possible values are:
     false 
           Disables any checking of `selectedClass` 
 ```
-- ***selectedClass***      **←** This is the class JSFx uses to determine if an element presently click on is in a selected state.
+- ***selectedClass***      **←** This is the class JSFx uses to determine if an element presently clicked on is in a selected state.
                          For example, when the user clicks on a selectable PrimeFaces table row it receives the class
                          "ui-state-highlight". When the user clicks on a different row, the other rows lose 
                          "ui-state-highlight" and the newly select row gains "ui-state-highlight".
